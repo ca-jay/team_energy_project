@@ -1,7 +1,6 @@
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 class Questions extends Movie{
@@ -24,7 +23,7 @@ class Questions extends Movie{
 	}
 
 	
-	public HashMap<String, Integer> askQuestions() {
+	public LinkedHashMap<String, Integer> askQuestions() {
 		
 		int v1 = 0; //Top Gun - Maverick
 		int v2 = 0; // Doctor Strange: Multiverse of Madness
@@ -54,113 +53,200 @@ class Questions extends Movie{
 			v6 ++;
 			v8 ++;
 			
+		}else if (userName.equals("no")) {
+			v2++;
+			v5++;
+			v7++;
+			v9++;
+			v10++;
 		}
 			
 		System.out.println("Do you like happy stories?");
+		userName = ofUser.nextLine();
+		userName = userName.toLowerCase();
 		if (userName.equals("yes")) {
 			v5 ++;
 			v8 ++;
 			v9 ++;
 			v10 ++;
 		
+		}else if (userName.equals("no")) {
+			v1++;
+			v2++;
+			v3++;
+			v4++;
+			v6++;
+			v7++;
+
 		}
-		
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+
 		
 		System.out.println("Do you enjoy fantasy?");
+		userName = ofUser.nextLine();
+		userName = userName.toLowerCase();
 		if (userName.equals("yes")) {
 			v2 ++;
 			v4 ++;
 			v5 ++;
 			
+		}else if (userName.equals("no")) {
+			v1++;
+			v3++;
+			v6++;
+			v7++;
+			v8++;
+			v9++;
+			v10++;
+			
+			
 		}
 		
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+
 		
 		System.out.println("Do you like to laugh the whole way through a movie?");
+		userName = ofUser.nextLine();
+		userName = userName.toLowerCase();
 		if (userName.equals("yes")) {
 			v5 ++;
 			v8 ++;
 			v10 ++;
+		}else if (userName.equals("no")) {
+			v1++;
+			v2++;
+			v3++;
+			v4++;
+			v6++;
+			v7++;
+			v9++;
 		}
 		
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+
 		
 		System.out.println("Do you enjoy dark movies?"); 
+		userName = ofUser.nextLine();
+		userName = userName.toLowerCase();
 		if (userName.equals("yes")) {
 			v2 ++;
 			v4 ++;
 			v7 ++;
-			
+		}else if (userName.equals("no")) {
+			v1++;
+			v3++;
+			v5++;
+			v6++;
+			v8++;
+			v9++;
+			v10++;
 		}
-		
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
-		
+
 		System.out.println("Are you a fan of super heroes?");
+		userName = ofUser.nextLine();
+		userName = userName.toLowerCase();
 		if (userName.equals("yes")) {
-			v2 ++;
-			v4 ++;
-			
+			v2++;
+			v4++;
+		}else if (userName.equals("no")) {
+			v1++;
+			v3++;
+			v5++;
+			v6++;
+			v7++;
+			v8++;
+			v9++;
+			v10++;
 		}
 		
+
+		System.out.println("Is history interesting to you?");
 		userName = ofUser.nextLine();
 		userName = userName.toLowerCase();
 		
-		System.out.println("Is history interesting to you?");
 		if (userName.equals("yes")) {
 			v7 ++;
 			v9 ++;
-			
+		}else if (userName.equals("no")) {
+			v1++;
+			v2++;
+			v3++;
+			v4++;
+			v5++;
+			v6++;
+			v8++;
+			v10++;
 		}
 		
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+
 		
 		System.out.println("Do you enjoy animation?");
-		if (userName.equals("yes")) {
-			v5 ++;
-		}
-		
 		userName = ofUser.nextLine();
 		userName = userName.toLowerCase();
 		
+		if (userName.equals("yes")) {
+			v5++;
+		}else if (userName.equals("no")) {
+			v1++;
+			v2++;
+			v3++;
+			v4++;
+			v6++;
+			v7++;
+			v8++;
+			v9++;
+			v10++;
+		}
+
+		
 		System.out.println("Does a good movie need to be romantic?");
+		userName = ofUser.nextLine();
+		userName = userName.toLowerCase();
+		
 		if (userName.equals("yes")) {
 			v7 ++;
 			v10 ++;
+		}else if (userName.equals("no")) {
+			v1++;
+			v2++;
+			v3++;
+			v4++;
+			v5++;
+			v6++;
+			v8++;
+			v9++;
 		}
 		
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+
 		
 		System.out.println("Do you enjoy a good mystery?");
+		userName = ofUser.nextLine();
+		userName = userName.toLowerCase();
 		if (userName.equals("yes")) {
 			v4 ++;
 			v7 ++;
-			
+		}else if (userName.equals("no")) {
+			v1++;
+			v2++;
+			v3++;
+			v5++;
+			v6++;
+			v8++;
+			v9++;
+			v10++;
 		}
 		
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+
 		
 		ofUser.close();
 		
-		int[] movieArr = {v1, v2, v3, v4, v5, v6, v7, v8, v9, v10};
+//		int[] movieArr = {v1, v2, v3, v4, v5, v6, v7, v8, v9, v10};
+//		
+//		for(int j=0; j<movieArr.length; j++) {
+//			System.out.println(movieArr[j]);
+//		}
+//		
 		
-		for(int i=0; i<movieArr.length; i++) {
-			System.out.println(movieArr[i]);
-		}
-		
-		HashMap<String, Integer> topMovies = new HashMap<String, Integer>();
-		
-//		topMovies = chooseGreatest(movieArr);
+		LinkedHashMap<String, Integer> topMovies = new LinkedHashMap<String, Integer>();
 
-
-		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		LinkedHashMap<String, Integer> map = new LinkedHashMap<String, Integer>();
 		map.put("Top Gun: Maverick", v1);
 		map.put("Doctor Strange: Multiverse of Madness", v2);
 		map.put("Jurassic World: Dominion", v3);
@@ -172,134 +258,48 @@ class Questions extends Movie{
 		map.put("Elvis", v9);
 		map.put("Father of the Bride", v10);
 		
-		
-		
 		topMovies = chooseGreatest(map);
 		
-	
-		
 		return topMovies;
-
-
+		
 	}
 	
 	
-//	public List<Integer> chooseGreatest(int[] list) {
-//		
-//		List<Integer> greatest = new ArrayList<Integer>();
-//		
-//		for(int i=0; i<list.length; i++) {
-//			for(int j=0; j<list.length; j++) {
-//				
-//				if(list[i]<list[j]) {
-//					j = list.length;
-//				}else if(j==list.length-1) {
-//					greatest.add(list[i]);
-//					list[i] = 0; 
-//				}		
-//			}
-//		}
-//		
-//		
-//		if(greatest.size()<3) {
-//			chooseGreatest(list);
-//		}else {
-//			return greatest; 
-//		}
-//		
-//		return greatest; 
-//		
-//	}
-	
-	
-	public HashMap<String, Integer> chooseGreatest(HashMap<String, Integer> list) {
-		
-		HashMap<String, Integer> secondList = new HashMap<String, Integer>();
-		secondList = list;
-		HashMap<String, Integer> newList = new HashMap<String, Integer>();		
-		
-		
+	public LinkedHashMap<String, Integer> chooseGreatest(LinkedHashMap<String, Integer> list) {
+		LinkedHashMap<String, Integer> newList = new LinkedHashMap<String, Integer>();			
 		int value;
 		int value2;
-		
 		int j=0;
+		
 		while(j<3) {
-	
-		HashMap.Entry<String, Integer> entry = null; 
-		
-        for (HashMap.Entry<String, Integer> currentEntry :
-            list.entrySet()) {
-        	String key = (String)currentEntry.getKey();
-        	value = (int)currentEntry.getValue();
-        	if(entry!=null) {
-        		value2 = entry.getValue();
-        	}else {
-        		value2 = 0;
-        	}
-           if (entry == null || (value > value2)
-                     ) {
-               entry = currentEntry; 
-
-           }
-        }
-        
-        String new_key = (String)entry.getKey();
-		int new_value = (int)entry.getValue();
-        
-        newList.put(new_key, new_value);
-        list.remove(new_key, new_value);
-        j++;
+			HashMap.Entry<String, Integer> entry = null; 
+			
+	        for (HashMap.Entry<String, Integer> currentEntry :
+	            list.entrySet()) {
+	        	value = (int)currentEntry.getValue();
+	        	if(entry!=null) {
+	        		value2 = entry.getValue();
+	        	}else {
+	        		value2 = 0;
+	        	}
+	           if (entry == null || (value > value2)) {
+	               entry = currentEntry; 
+	           }
+	        }
+	        
+	        String new_key = (String)entry.getKey();
+	        
+			int new_value = (int)entry.getValue();
+			
+			if(!newList.containsKey(new_key)) {
+	        newList.put(new_key, new_value);
+	        list.remove(new_key, new_value);
+			}
+	        j++;
 		}
-		
-        
+		   
         return newList;
         
-	}
-       
-       
-////		for(HashMap.Entry<String, Integer> mapElement : list.entrySet()) {
-////			
-////			String key = (String)mapElement.getKey();
-////			int value = (int)mapElement.getValue();
-////					
-////					for(HashMap.Entry<String, Integer> mapElement2: secondList.entrySet()) {
-////						j++; 
-////						
-////						String key2 = (String)mapElement2.getKey();
-////						int value2 = (int)mapElement2.getValue();
-////						
-////						if(value<value2) {
-////							break;
-////							
-////						}else if(j == 9) {
-////							System.out.println(key);
-////							newList.put(key, value);
-////							list.put(key, 0);
-////						}
-////					}
-////			
-////			
-////		}
-////		
-//		
-//		if(newList.size()<3) {
-//			chooseGreatest(list);
-//			
-//		}else {
-//			return newList;
-//		}
-//
-//		return newList;
-//		
-//	}
-
-
-
-	
-	
-	
-	
-	
-	
+	}	
 }
 
