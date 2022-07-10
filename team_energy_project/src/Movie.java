@@ -53,17 +53,20 @@ class Movie{
 		System.out.println("Movie: " + this.getName());
 		System.out.println("Genre: " + this.getGenre());
 		System.out.println("Released: " + this.getReleased());
-		System.out.println("Cast: " + this.getCast());
+		System.out.print("Cast: ");
+		for(int m=0; m<this.getCast().length; m++) {
+			if(m<this.getCast().length-1) {
+				System.out.print(this.getCast()[m] + ", "); 
+			}else {
+				System.out.print(this.getCast()[m]); 
+			}
+			  
+		}
 	}
 	
 	
 	
-	public void setQuestions(HashMap<String, Boolean> map) {
-				
-		Questions movie = new Questions(); 	
-		movie.setAttributes(map);
-	
-	}
+
 	
 	
 

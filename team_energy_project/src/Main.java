@@ -7,7 +7,6 @@ import java.util.Map;
 public class Main {
 	  public static void main(String[] args) {
 		  
-
 //			TOP GUN MAVERICK 
 //			Q1:T Q2:f  q3:f q4:f q5:f q6:f q7:f q8:f q9:f q10:f
 		    Movie TopGun = new Movie(); 
@@ -138,19 +137,20 @@ public class Main {
 		  System.out.println("\n=========================\n\n");
 		  int displayNum;
 		  for(int x=0; x<movieArr.length;x++) {
-			  displayNum = x+1;
-			  System.out.println("#" + displayNum + " " + movieArr[x].getName());
-			  System.out.println("Genre: " + movieArr[x].getGenre());
-			  System.out.println("Released: " + movieArr[x].getReleased());
-			  System.out.print("Cast: ");
-			  for(int m=0; m<movieArr[x].getCast().length; m++) {
-				  if(m<movieArr[x].getCast().length-1) {
-					  System.out.print(movieArr[x].getCast()[m] + ", "); 
-				  }else {
-					  System.out.print(movieArr[x].getCast()[m]); 
-				  }
-				  
-			  }
+//			  displayNum = x+1;
+//			  System.out.println("#" + displayNum + " " + movieArr[x].getName());
+//			  System.out.println("Genre: " + movieArr[x].getGenre());
+//			  System.out.println("Released: " + movieArr[x].getReleased());
+//			  System.out.print("Cast: ");
+//			  for(int m=0; m<movieArr[x].getCast().length; m++) {
+//				  if(m<movieArr[x].getCast().length-1) {
+//					  System.out.print(movieArr[x].getCast()[m] + ", "); 
+//				  }else {
+//					  System.out.print(movieArr[x].getCast()[m]); 
+//				  }
+//				  
+//			  }
+			  movieArr[x].displayMovie();
 			  System.out.println("\n\n");
 		  }
 

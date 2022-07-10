@@ -1,4 +1,6 @@
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
@@ -7,21 +9,18 @@ class Questions extends Movie{
 	
 	
 	public HashMap<String, Boolean> questions;
-	
-	
-	public void setAttributes(HashMap<String, Boolean> theQuestions) {
-		
-		this.questions = theQuestions;
-		
-	}
-	
-	
-	public HashMap<String, Boolean> getAttributes() {
-		
-		return this.questions;
-		
-	}
+	public Scanner ofUser; //I used the same scanner throughout
+	public String userName; //this is for user input as it's used throughout the program
 
+	
+	
+	public void setUserName(String a) {
+		this.userName = a;
+	}
+	
+	public String getUserName() {
+		return this.userName;
+	}
 	
 	public LinkedHashMap<String, Integer> askQuestions() {
 		
@@ -38,14 +37,16 @@ class Questions extends Movie{
 		
 		System.out.println("Welcome to movie recs."); //Welcome/opening prompt
 		System.out.println("Please enter your first name");
-		Scanner ofUser = new Scanner(System.in); //I used the same scanner throughout
-		String userName = ofUser.nextLine(); //this is for user input as it's used throughout the program
+		ofUser = new Scanner(System.in); //I used the same scanner throughout
+		userName = ofUser.nextLine(); //this is for user input as it's used throughout the program
 		System.out.println("Hello " + userName + " please answer the following questions to assist in our recommendation(s) for you.");
 		
 		//each movie is incremented based on user input to each question through their corresponding variable assigned above
 		System.out.println("Do you like action-packed movies?");
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+		setUserName(ofUser.nextLine());
+		setUserName(getUserName().toLowerCase());
+		assertEquals("checkYes", userName, userName);
+
 		if (userName.equals("yes")) {
 			v1 ++;
 			v3 ++;
@@ -62,8 +63,11 @@ class Questions extends Movie{
 		}
 			
 		System.out.println("Do you like happy stories?");
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+//		userName = ofUser.nextLine();
+//		userName = userName.toLowerCase();
+		setUserName(ofUser.nextLine());
+		setUserName(getUserName().toLowerCase());
+
 		if (userName.equals("yes")) {
 			v5 ++;
 			v8 ++;
@@ -82,8 +86,11 @@ class Questions extends Movie{
 
 		
 		System.out.println("Do you enjoy fantasy?");
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+//		userName = ofUser.nextLine();
+//		userName = userName.toLowerCase();
+		setUserName(ofUser.nextLine());
+		setUserName(getUserName().toLowerCase());
+
 		if (userName.equals("yes")) {
 			v2 ++;
 			v4 ++;
@@ -104,8 +111,11 @@ class Questions extends Movie{
 
 		
 		System.out.println("Do you like to laugh the whole way through a movie?");
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+//		userName = ofUser.nextLine();
+//		userName = userName.toLowerCase();
+		setUserName(ofUser.nextLine());
+		setUserName(getUserName().toLowerCase());
+		
 		if (userName.equals("yes")) {
 			v5 ++;
 			v8 ++;
@@ -123,8 +133,11 @@ class Questions extends Movie{
 
 		
 		System.out.println("Do you enjoy dark movies?"); 
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+//		userName = ofUser.nextLine();
+//		userName = userName.toLowerCase();
+		setUserName(ofUser.nextLine());
+		setUserName(getUserName().toLowerCase());
+
 		if (userName.equals("yes")) {
 			v2 ++;
 			v4 ++;
@@ -140,8 +153,11 @@ class Questions extends Movie{
 		}
 
 		System.out.println("Are you a fan of super heroes?");
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+//		userName = ofUser.nextLine();
+//		userName = userName.toLowerCase();
+		setUserName(ofUser.nextLine());
+		setUserName(getUserName().toLowerCase());
+
 		if (userName.equals("yes")) {
 			v2++;
 			v4++;
@@ -158,8 +174,11 @@ class Questions extends Movie{
 		
 
 		System.out.println("Is history interesting to you?");
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+//		userName = ofUser.nextLine();
+//		userName = userName.toLowerCase();
+		setUserName(ofUser.nextLine());
+		setUserName(getUserName().toLowerCase());
+
 		
 		if (userName.equals("yes")) {
 			v7 ++;
@@ -178,8 +197,11 @@ class Questions extends Movie{
 
 		
 		System.out.println("Do you enjoy animation?");
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+//		userName = ofUser.nextLine();
+//		userName = userName.toLowerCase();
+		setUserName(ofUser.nextLine());
+		setUserName(getUserName().toLowerCase());
+
 		
 		if (userName.equals("yes")) {
 			v5++;
@@ -197,8 +219,11 @@ class Questions extends Movie{
 
 		
 		System.out.println("Does a good movie need to be romantic?");
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+//		userName = ofUser.nextLine();
+//		userName = userName.toLowerCase();
+		setUserName(ofUser.nextLine());
+		setUserName(getUserName().toLowerCase());
+
 		
 		if (userName.equals("yes")) {
 			v7 ++;
@@ -217,8 +242,11 @@ class Questions extends Movie{
 
 		
 		System.out.println("Do you enjoy a good mystery?");
-		userName = ofUser.nextLine();
-		userName = userName.toLowerCase();
+//		userName = ofUser.nextLine();
+//		userName = userName.toLowerCase();
+		setUserName(ofUser.nextLine());
+		setUserName(getUserName().toLowerCase());
+
 		if (userName.equals("yes")) {
 			v4 ++;
 			v7 ++;
@@ -237,12 +265,7 @@ class Questions extends Movie{
 		
 		ofUser.close();
 		
-//		int[] movieArr = {v1, v2, v3, v4, v5, v6, v7, v8, v9, v10};
-//		
-//		for(int j=0; j<movieArr.length; j++) {
-//			System.out.println(movieArr[j]);
-//		}
-//		
+
 		
 		LinkedHashMap<String, Integer> topMovies = new LinkedHashMap<String, Integer>();
 
